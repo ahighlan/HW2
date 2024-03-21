@@ -1,0 +1,46 @@
+# Let's write a Python program to convert plain text to Morse Code as described in the instructions.
+
+# Morse Code dictionary as provided
+morse_code_dict = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..'
+}
+
+# Function to translate plain text to Morse Code
+def plaintext_to_morse(text):
+    morse_code = ''
+    for char in text:
+        if char.isalpha():  # Check if character is an alphabet
+            morse_code += morse_code_dict[char.upper()] + ' '
+        elif char == ' ':
+            morse_code += '  '  # Two spaces for spaces in the input string
+    return morse_code.strip()
+
+# Main program to ask for input and output the Morse Code
+def main():
+    # Assuming we should include standard Python comments as per instructions
+    print("# This is a Python program to convert plaintext to Morse Code.")
+    print("# Developed as part of homework assignment.")
+    print("# The program reads input from the user and converts it to Morse Code.")
+    
+    # Input from the user
+    plaintext = input("Enter the string to convert to Morse Code: ")
+    # Conversion
+    morse_code = plaintext_to_morse(plaintext)
+    # Output the Morse Code
+    print("Morse Code equivalent:", morse_code)
+
+# Run the main program
+main()
+
+# Since the input function does not work in this environment, we will use a predefined string.
+example_text = "Go Pokes"
+
+# Call the plaintext_to_morse function with the predefined string.
+example_morse_code = plaintext_to_morse(example_text)
+
+example_morse_code
+
